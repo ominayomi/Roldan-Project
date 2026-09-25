@@ -80,19 +80,3 @@ water_bill_difference = water_current_bill - water_previous_bill
 
 print("\n--- Water Summary ---")
 print("Water Usage:", water_usage, "units")
-
-# Relational + Logical Operators (higher or lower than previous month)
-if water_current_bill > water_previous_bill:
-    print("Your bill is higher than your previous month.")
-elif water_current_bill < water_previous_bill:
-    print("Your bill is lower than your previous month.")
-else:
-    print("Your bill is the same as your previous month.")
-
-# Threshold check for water
-if water_current_bill > 1000:
-    print("\nConsider reducing your water utility usage to help lower your monthly bill.")
-elif water_current_bill < 500:
-    print("\nYour consumption decreased by 10% compared to last month.")
-    print("Keep up your saving habits!")
-

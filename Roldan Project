@@ -68,15 +68,3 @@ elif elec_current_bill < 3000:
 
 # ---- Step 5: Water Bill ----
 print("\n=== Water Bill ===")
-
-water_previous_reading = float(input("Enter previous water meter reading: "))
-water_current_reading = float(input("Enter current water meter reading: "))
-water_previous_bill = float(input("Enter previous month's water bill (pesos): "))
-water_current_bill = float(input("Enter current month's water bill (pesos): "))
-
-# Arithmetic Operators
-water_usage = water_current_reading - water_previous_reading
-water_bill_difference = water_current_bill - water_previous_bill
-
-print("\n--- Water Summary ---")
-print("Water Usage:", water_usage, "units")

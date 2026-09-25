@@ -1,0 +1,97 @@
+# ============================
+# Simple Registration & Account Program
+# ============================
+
+# ---- Step 1: Register (Personal Information) ----
+print("=== Register Your Information ===")
+full_name = input("Enter your full name: ")
+occupation = input("Enter your occupation: ")
+salary = float(input("Enter your salary: "))
+age = int(input("Enter your age: "))
+account_id = input("Enter your account ID number (for water/electricity bill): ")
+
+print("\nAccount successfully registered")
+
+# ---- Step 2: Create Login Account (Username and Password only) ----
+print("\n=== Create Login Account ===")
+new_username = input("Create a username: ")
+new_password = input("Create a password: ")
+
+print("\nLogin account created successfully!")
+
+# ---- Step 3: Login (loops until correct) ----
+login_success = False
+
+while login_success == False:
+    print("\n=== Login ===")
+    username = input("Enter your username: ")
+    password = input("Enter your password: ")
+
+    if username == new_username and password == new_password:
+        print("\nLogin Successful!")
+        print("Welcome,", full_name)
+        login_success = True
+    else:
+        print("\nLogin Failed. Details do not match. Please try again.")
+
+# ---- Step 4: Electricity Bill ----
+print("\n=== Electricity Bill ===")
+print("Account ID:", account_id)
+
+elec_previous_reading = float(input("Enter previous electricity meter reading: "))
+elec_current_reading = float(input("Enter current electricity meter reading: "))
+elec_previous_bill = float(input("Enter previous month's electricity bill (pesos): "))
+elec_current_bill = float(input("Enter current month's electricity bill (pesos): "))
+
+# Arithmetic Operators
+elec_usage = elec_current_reading - elec_previous_reading
+elec_bill_difference = elec_current_bill - elec_previous_bill
+
+print("\n--- Electricity Summary ---")
+print("Electricity Usage:", elec_usage, "units")
+
+# Relational + Logical Operators (higher or lower than previous month)
+if elec_current_bill > elec_previous_bill:
+    print("Your bill is higher than your previous month.")
+elif elec_current_bill < elec_previous_bill:
+    print("Your bill is lower than your previous month.")
+else:
+    print("Your bill is the same as your previous month.")
+
+# Threshold check for electricity
+if elec_current_bill > 3500:
+    print("\nYour consumption increased by 10% compared to last month.")
+    print("Consider reducing your utility usage to help lower your monthly bill.")
+elif elec_current_bill < 3000:
+    print("\nYour consumption decreased by 10% compared to last month.")
+    print("Keep up your saving habits!")
+
+# ---- Step 5: Water Bill ----
+print("\n=== Water Bill ===")
+
+water_previous_reading = float(input("Enter previous water meter reading: "))
+water_current_reading = float(input("Enter current water meter reading: "))
+water_previous_bill = float(input("Enter previous month's water bill (pesos): "))
+water_current_bill = float(input("Enter current month's water bill (pesos): "))
+
+# Arithmetic Operators
+water_usage = water_current_reading - water_previous_reading
+water_bill_difference = water_current_bill - water_previous_bill
+
+print("\n--- Water Summary ---")
+print("Water Usage:", water_usage, "units")
+
+# Relational + Logical Operators (higher or lower than previous month)
+if water_current_bill > water_previous_bill:
+    print("Your bill is higher than your previous month.")
+elif water_current_bill < water_previous_bill:
+    print("Your bill is lower than your previous month.")
+else:
+    print("Your bill is the same as your previous month.")
+
+# Threshold check for water
+if water_current_bill > 1000:
+    print("\nConsider reducing your water utility usage to help lower your monthly bill.")
+elif water_current_bill < 500:
+    print("\nYour consumption decreased by 10% compared to last month.")
+    print("Keep up your saving habits!")

@@ -95,3 +95,4 @@ if water_current_bill > 1000:
 elif water_current_bill < 500:
     print("\nYour consumption decreased by 10% compared to last month.")
     print("Keep up your saving habits!")
+
